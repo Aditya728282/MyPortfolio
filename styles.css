@@ -1,0 +1,43 @@
+.alphabet-container {
+    display: flex;
+    justify-content:space-around;
+    padding:8px;
+    margin: 20px;
+    text-align: center;
+    background-color: rgb(32, 22, 221);
+}
+
+.letter {
+    font-size: 4rem;
+    padding: 20px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.letter:hover {
+    transform: scale(1.1);
+}
+
+.animation-area {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#object-image {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    transition: transform 1s;
+}
+
+.hidden {
+    display: none;
+}
+
+#animation-text {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+}

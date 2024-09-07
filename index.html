@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya's Portfolio</title>
+    <meta name="description" content="Aditya's portfolio website showcasing web development and electronics engineering skills.">
+    <meta name="keywords" content="Portfolio, Web Development, Electronics Engineering, Aditya">
+    <meta name="author" content="Aditya">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(21, 21, 74);
+            padding: 0 20px;
+        }
+        nav ul {
+            display: flex;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s, font-size 0.3s;
+        }
+        nav ul li a:hover {
+            color: brown;
+            font-size: 1.1rem;
+        }
+        .left {
+            font-size: 2rem;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 60px 0;
+        }
+        .hero > div {
+            width: 40%;
+        }
+        .rightSection img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .leftSection {
+            font-size: 2.8rem;
+        }
+        .leftSection button {
+            padding: 15px;
+            background-color:#07287b;
+            color:rgb(251, 231, 205);
+            border: 2px solid grey;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 20px; 
+            max-width: 160px;
+        }
+        .leftSection button:hover {
+            background-color: #d91741;
+        }
+        .purple {
+            color: rgb(197, 25, 74);
+        }
+        .grey {
+            color: grey;
+        }
+        #element {
+            color: rgb(170, 107, 228);
+        }
+        .secondSection {
+            margin: auto;
+            max-width: 80vw;
+            padding: 20px;
+        }
+        .secondSection h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .work-experience {
+            margin-top: 40px;
+        }
+        .work-experience h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .work-experience p {
+            margin-bottom: 10px;
+        }
+        main hr {
+            border: 0;
+            border-radius: 6px;
+            background: #5f59db;
+            height: 1.2px;
+            margin: 60px 0;
+        }
+        footer {
+            background-color: rgb(21, 21, 74);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+        footer p {
+            margin-top: 10px;
+        }
+
+        /* About Section */
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+        }
+        .about h1, .services h1, .contact h1, .projects h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .about p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        /* Projects Section */
+        .projects .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .projects .project-card {
+            background-color: rgb(21, 21, 74);
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        .projects .project-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .projects .project-card p {
+            color: grey;
+            margin-bottom: 10px;
+        }
+        .projects .project-card a {
+            color: #255ae0;
+            text-decoration: none;
+        }
+        .projects .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Services Section */
+        .services .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .services .service-card {
+            background-color: rgb(21, 21, 74);
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        .services .service-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .services .service-card p {
+            color: grey;
+        }
+        
+        /* Contact Section */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+        .contact form input, .contact form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            background: rgb(21, 21, 74);
+            color: white;
+        }
+        .contact form button {
+            padding: 10px;
+            background-color: #255ae0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .contact form button:hover {
+            background-color: #d91741;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">My Portfolio</div>  
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="leftSection">
+                <div>Hi, My Name is <span class="purple">Aditya</span></div>
+                <div>I'm a Web Developer</div>
+                <span id="element"></span>
+                <br>
+                <a href="https://drive.google.com/file/d/1y6JayS8iEaW99TTlJiAOZVGVNA5lYvkU/view?usp=drive_link"><button class="button">My Resume</button></a> 
+            </div>
+            <div class="rightSection"><img src="bg.png.png" alt="Background Image"></div>
+        </section>
+        <hr>
+        
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <h1>About Me</h1>
+            <p>
+                I am Aditya Kumar, a B.Tech student specializing in Electronics and Communication Engineering at G.L Bajaj Institute Of Technology and Management. My academic journey has equipped me with a robust understanding of digital signal processing, data communication networks, and integrated circuits. 
+            </p>
+            <p>
+                Beyond academics, I've designed and implemented practical projects like a Wireless Power Transmission System and a Calculator project. These experiences have strengthened my skills in programming, particularly in C++, and in developing efficient systems using OOP concepts and data structures.
+            </p>
+            <p>
+                My passion for technology extends to Android development, where I have built and maintained applications during my internship. I continuously seek opportunities to apply my knowledge in real-world scenarios, ensuring that I am always at the cutting edge of technological advancements.
+            </p>
+        </section>
+        <hr>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <h1>My Projects</h1>
+            <div class="project-cards">
+                <div class="project-card">
+                    <h2>Wireless Power Transmission System</h2>
+                    <p>
+                        Designed and implemented a Wireless Power Transmission System, enabling the transfer of power without physical connections. This project involved the application of electromagnetic theory and circuit design.
+                    </p>
+                    <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h2>Calculator Project</h2>
+                    <p>
+                        Developed a responsive calculator application using CSS and JavaScript. The calculator handles basic arithmetic operations with an intuitive interface, providing a seamless user experience.
+                    </p>
+                    <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h2>Android Weather App</h2>
+                    <p>
+                        Built a responsive Android application in Kotlin that fetches real-time weather data using APIs. The app features a sleek UI and provides users with accurate and up-to-date weather information.
+                    </p>
+                    <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+        <hr>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <h1>My Services</h1>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h2>Web Development</h2>
+                    <p>
+                        I offer services in web development, utilizing HTML, CSS, JavaScript, and responsive design techniques to create user-friendly and visually appealing websites.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <h2>Electronics Engineering</h2>
+                    <p>
+                        My expertise in electronics engineering includes designing circuits, working with IoT devices, and implementing VLSI concepts. I can assist in developing efficient electronic systems and prototypes.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <h2>Android Development</h2>
+                    <p>
+                        As an Android developer, I build robust mobile applications using Kotlin. My work adheres to best practices in coding and design, ensuring that the apps are both functional and intuitive.
+                    </p>
+                </div>
+               
+            </div>
+        </section>
+        <hr>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="section contact">
+            <h1>Contact Me</h1>
+            <p>If you'd like to get in touch with me for any projects, collaborations, or queries, feel free to reach out through the form below or via the contact information provided.</p>
+            
+            <form action="your-form-handler.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <br>
+            <p>You can also reach me directly via email at <a href="mailto:adityakumar93061@gmail.com" style="color: #255ae0;">adityakumar93061@gmail.com</a> or connect with me on <a href="https://linkedin.com/in/aditya-kumar-singh-467636256" style="color: #255ae0;">LinkedIn</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2024 Aditya's Portfolio. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['<i>Frontend</i> Developer ', '&amp; Electronics Engineer.'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+</html>
